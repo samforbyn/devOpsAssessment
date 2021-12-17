@@ -75,7 +75,7 @@ app.post('/api/duel', (req, res) => {
             playerRecord.losses++
             res.status(200).send('You lost!')
         } else {
-            playerRecord.losses++
+            playerRecord.wins++
             res.status(200).send('You won!')
         }
         rollbar.info("calculations performed correctly")
