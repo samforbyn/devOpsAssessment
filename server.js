@@ -81,6 +81,7 @@ app.post('/api/duel', (req, res) => {
         rollbar.info("calculations performed correctly")
     } catch (error) {
         console.log('ERROR DUELING', error)
+        rollbar.critical("Error Dueling!")
         res.sendStatus(400)
     }
 })
@@ -90,6 +91,7 @@ app.get('/api/player', (req, res) => {
         res.status(200).send(playerRecord)
     } catch (error) {
         console.log('ERROR GETTING PLAYER STATS', error)
+        rollbar.critical("Cannot get player stats")
         res.sendStatus(400)
     }
 })
