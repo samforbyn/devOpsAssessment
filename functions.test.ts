@@ -1,13 +1,16 @@
 const {shuffleArray} = require('./utils')
 
+let testArr = [1,2,3,4,5,6]
+
 describe('shuffleArray should', () => {
-    const {arrCopy, array} = shuffleArray
+    const {arrCopy} = shuffleArray
     test('shuffled array is numbers', () => {
-        shuffleArray([1,2,3,4,5,6])
-        expect(arrCopy).not.toBeNaN()
+        expect(shuffleArray(testArr)).not.toBeNaN()
     })
     test('shuffleArray is truthy', () => {
-        shuffleArray([1,2,3,4,5,6])
-        expect(shuffleArray).toBeTruthy()
+        expect(shuffleArray(testArr)).toBeTruthy()
+    })
+    test('shuffleArray returns an array', () => {
+        expect(Array.isArray(shuffleArray(testArr))).toBe(true)
     })
 })
